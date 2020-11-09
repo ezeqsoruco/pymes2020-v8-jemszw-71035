@@ -8,6 +8,12 @@
 </div>
 
 <div id="divTablaResultados" *ngIf="AccionABMC == 'L'">
+	<div class="row justify-content-center">
+		<button type="button" class="btn btn-primary" (click)="Agregar()">
+      <span class="fas fa-plus"> </span>
+      Agregar
+    </button>
+	</div>
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
@@ -26,12 +32,6 @@
 			</tr>
 		</tbody>
 	</table>
-	<div class="row justify-content-center">
-		<button type="button" class="btn btn-primary" (click)="Agregar()">
-      <span class="fas fa-plus"> </span>
-      Agregar
-    </button>
-	</div>
 </div>
 
 <!-- Registro en Alta -->
