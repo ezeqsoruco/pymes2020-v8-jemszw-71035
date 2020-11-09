@@ -21,7 +21,7 @@
 			<tr *ngFor="let item of Items">
 				<td>{{item.IdEmpresa}}</td>
 				<td class="text-right">{{item.RazonSocial}}</td>
-				<td class="text-right">{{item.FechaFundacion}}</td>
+				<td class="text-right">{{item.FechaFundacion| date:'dd/MM/yyyy}}</td>
 				<td>{{item.CantidadEmpleados}}</td>
 			</tr>
 		</tbody>
