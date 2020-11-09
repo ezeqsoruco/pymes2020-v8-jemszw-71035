@@ -51,6 +51,9 @@ export class EmpresasComponent implements OnInit {
   }
 
   Agregar(){
-    
+    this.AccionABMC = "A";
+    this.FormReg.reset();
+    this.submitted = false;
+    this.FormReg.markAsUntouched();
   }
 }
