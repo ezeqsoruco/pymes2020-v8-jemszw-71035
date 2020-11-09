@@ -17,7 +17,7 @@ export class EmpresasComponent implements OnInit {
 
   Items: Empresa[] = [];
 
-  AccionABMC = "L";
+  AccionABMC = "";
 
   FormReg: FormGroup;
   submitted = false;
@@ -50,7 +50,7 @@ export class EmpresasComponent implements OnInit {
     });
   }
 
-  Agregar(){
+  Agregar() {
     this.AccionABMC = "A";
     this.FormReg.reset();
     this.submitted = false;
