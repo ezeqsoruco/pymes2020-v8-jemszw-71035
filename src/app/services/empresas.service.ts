@@ -20,4 +20,8 @@ export class EmpresasService {
   get() {
     return this.httpClient.get(this.resourceUrl);
   }
+
+  post(obj: Empresa) {
+    return this.httpClient.post(this.resourceUrl, obj);
+  }
 }
