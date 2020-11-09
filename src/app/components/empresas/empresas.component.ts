@@ -8,11 +8,21 @@ import { Empresa } from "../../models/empresa";
   styleUrls: ["./empresas.component.css"]
 })
 export class EmpresasComponent implements OnInit {
+  Titulo = "Empresas";
+  TituloAccionABMC = {
+    A: "(Agregar)",
+    L: "(Listado)"
+  };
+
   Items: Empresa[] = [];
+
+  AccionABMC = "L";
 
   constructor(private empresasService: EmpresasService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.GetEmpresas();
+  }
 
   GetEmpresas() {
     this.empresasService.get().subscribe((res: Empresa[]) => {
