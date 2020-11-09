@@ -21,7 +21,7 @@
 			<tr *ngFor="let item of Items">
 				<td>{{item.IdEmpresa}}</td>
 				<td class="text-right">{{item.RazonSocial}}</td>
-				<td class="text-right">{{item.FechaFundacion| date:'dd/MM/yyyy}}</td>
+				<td class="text-right">{{item.FechaFundacion}}</td>
 				<td>{{item.CantidadEmpleados}}</td>
 			</tr>
 		</tbody>
@@ -37,8 +37,6 @@
 <!-- Registro en Alta -->
 <form id="FormReg" [formGroup]="FormReg" *ngIf="AccionABMC == 'A'" class="bg-light">
 	<fieldset [disabled]="AccionABMC==='C'">
-
-		<!-- Razon social -->
 		<div class="form-group row">
 			<label class="col-form-label col-sm-2 col-sm-offset-2" for="RazonSocial"
         >Razon Social <span class="text-danger">*</span>
@@ -69,35 +67,41 @@
 			</div>
 		</div>
 
-		<!-- Fecha Fundacion -->
-		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2">Fecha Fundacion<span
-                    class="text-danger">*</span></label>
-			<div class="col-sm-6">
-				<input class="form-control"
-                           name="FechaFundacion" formControlName="FechaFundacion"
-                           [ngClass]="{'is-invalid': (FormReg.controls.FechaFundacion.touched || submitted)  
-            && FormReg.controls.FechaFundacion.errors}" />
 
-				<span class="text-danger" *ngIf="(FormReg.controls.FechaFundacion.touched || submitted) 
-                       && FormReg.controls.FechaFundacion.errors?.required">
-                    Dato requerido.
-                </span>
-				<span class="text-danger" *ngIf="FormReg.controls.FechaFundacion.errors?.pattern">
-                    Dato fecha, formato dd/mm/aaaa.
+		<div class="row form-group">
+			<label
+        class="col-form-label col-sm-2 col-sm-offset-2"
+        for="FechaFundacion"
+        >Fecha Fundacion <span class="text-danger">*</span></label>
+			<div class="col-sm-6">
+				<input
+          type="text"
+          name="FechaFundacion"
+          class="form-control"
+          formControlName="FechaFundacion"
+          [ngClass]="{'is-invalid': (FormReg.controls.FechaFundacion.touched || submitted)  
+            && FormReg.controls.FechaFundacion.errors}"
+        />
+				<span
+          class="text-danger"
+          *ngIf="(FormReg.controls.FechaFundacion.touched || submitted) 
+                       && FormReg.controls.FechaFundacion.errors?.required"
+        >
+          Dato requerido.
         </span>
+				<span class="text-danger" *ngIf="FormReg.controls.FechaAlta.errors?.pattern">
+                    Dato fecha, formato dd/mm/aaaa.
 			</div>
 		</div>
 
-
-		<!--campo Cantidad Empleados-->
+		<!--campo cantidad de horas-->
 		<div class="form-group row">
 			<label
         class="col-form-label col-sm-2 col-sm-offset-2"
         for="CantidadEmpleados"
       >
         Cantidad Empleados <span class="text-danger">*</span>
-      </label>
+			</label>
 			<div class="col-sm-6">
 				<input
           type="text"
