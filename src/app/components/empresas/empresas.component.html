@@ -37,6 +37,7 @@
 <!-- Registro en Alta -->
 <form id="FormReg" [formGroup]="FormReg" *ngIf="AccionABMC == 'A'" class="bg-light">
 	<fieldset [disabled]="AccionABMC==='C'">
+    <!--campo razon social-->
 		<div class="form-group row">
 			<label class="col-form-label col-sm-2 col-sm-offset-2" for="RazonSocial"
         >Razon Social <span class="text-danger">*</span>
@@ -67,7 +68,7 @@
 			</div>
 		</div>
 
-
+<!--campo fecha fundación-->
 		<div class="row form-group">
 			<label
         class="col-form-label col-sm-2 col-sm-offset-2"
@@ -95,7 +96,7 @@
 			</div>
 		</div>
 
-		<!--campo cantidad de horas-->
+		<!--campo cantidad de empleados-->
 		<div class="form-group row">
 			<label
         class="col-form-label col-sm-2 col-sm-offset-2"
