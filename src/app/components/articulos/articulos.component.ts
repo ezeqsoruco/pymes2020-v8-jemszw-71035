@@ -22,6 +22,7 @@ export class ArticulosComponent implements OnInit {
     C: "(Consultar)",
     L: "(Listado)"
   };
+  
   AccionABMC = "L"; // inicialmente inicia en el listado de articulos (buscar con parametros)
   Mensajes = {
     SD: " No se encontraron registros...",

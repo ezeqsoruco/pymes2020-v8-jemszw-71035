@@ -1,7 +1,8 @@
 <h3>{{Titulo}} <small>{{TituloAccionABMC[AccionABMC]}}</small></h3>
+
 <p>Holaaa</p>
 <!-- Botones Consultar -->
-<div class="row justify-content-center" *ngIf="AccionABMC != 'C'">
+<div class="row justify-content-center" *ngIf="AccionABMC == 'C'">
   <button type="button" class="btn btn-primary" (click)="Consultar()">
     Consultar
   </button>
