@@ -13,12 +13,15 @@ export class EmpresasComponent implements OnInit {
   Titulo = "Empresas";
   TituloAccionABMC = {
     A: "(Agregar)",
+    B: "(Eliminar)",
+    M: "(Modificar)",
+    C: "(Consultar)",
     L: "(Listado)"
   };
 
   Items: Empresa[] = [];
 
-  AccionABMC = "";
+  AccionABMC = "L";
 
   FormReg: FormGroup;
   submitted = false;
