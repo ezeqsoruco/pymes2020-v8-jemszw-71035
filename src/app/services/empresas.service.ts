@@ -24,4 +24,8 @@ export class EmpresasService {
   post(obj: Empresa) {
     return this.httpClient.post(this.resourceUrl, obj);
   }
+
+  put(Id: number, obj: Empresa) {
+    return this.httpClient.put(this.resourceUrl + Id, obj);
+  }
 }
