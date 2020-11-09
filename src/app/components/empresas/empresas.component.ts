@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { EmpresasService } from "../../services/empresas.service";
+import { Empresa } from "../../models/empresa";
 
 @Component({
-  selector: 'app-empresas',
-  templateUrl: './empresas.component.html',
-  styleUrls: ['./empresas.component.css']
+  selector: "app-empresas",
+  templateUrl: "./empresas.component.html",
+  styleUrls: ["./empresas.component.css"]
 })
 export class EmpresasComponent implements OnInit {
+  Items: Empresa[] = [];
 
-  constructor() { }
+  constructor(private empresasService: EmpresasService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  GetEmpresas() {
+    this.empresasService.get().subscribe((res: Empresa[]) => {
+      this.Items = res;
+    });
   }
-
 }

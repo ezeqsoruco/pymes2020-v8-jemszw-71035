@@ -1,6 +1,6 @@
 export class Empresa {
   IdEmpresa: number;
-  Nombre: string;
+  RazonSocial: string;
   FechaFundacion: Date;
   CantidadEmpleados: number;
 }
