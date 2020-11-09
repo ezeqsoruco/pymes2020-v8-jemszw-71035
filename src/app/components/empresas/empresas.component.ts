@@ -33,7 +33,7 @@ export class EmpresasComponent implements OnInit {
     this.GetEmpresas();
 
     this.FormReg = this.formBuilder.group({
-      IdArticulo: [0],
+      IdEmpresa: [0],
       RazonSocial: [
         "",
         [Validators.required, Validators.minLength(4), Validators.maxLength(55)]
@@ -47,7 +47,10 @@ export class EmpresasComponent implements OnInit {
           )
         ]
       ],
-      CantidadEmpleados: [null, [Validators.required, Validators.pattern("[0-9]{1,7}")]]
+      CantidadEmpleados: [
+        null,
+        [Validators.required, Validators.pattern("[0-9]{1,7}")]
+      ]
     });
   }
 
@@ -73,8 +76,6 @@ export class EmpresasComponent implements OnInit {
     this.AccionABMC = "L";
   }
 
-  
-  
   // grabar tanto altas como modificaciones
   Grabar() {
     this.submitted = true;
@@ -96,8 +97,8 @@ export class EmpresasComponent implements OnInit {
       ).toISOString();
 
     // agregar post
-    if (itemCopy.IdArticulo == 0 || itemCopy.IdArticulo == null) {
-      itemCopy.IdArticulo = 0;
+    if (itemCopy.IdEmpresa == 0 || itemCopy.IdEmpresa == null) {
+      itemCopy.IdEmpresa = 0;
       this.empresasService.post(itemCopy).subscribe((res: any) => {
         this.Volver();
         this.modalDialogService.Alert("Registro agregado correctamente.");
@@ -105,12 +106,11 @@ export class EmpresasComponent implements OnInit {
     } else {
       // modificar put
       this.empresasService
-        .put(itemCopy.IdArticulo, itemCopy)
+        .put(itemCopy.IdEmpresa, itemCopy)
         .subscribe((res: any) => {
           this.Volver();
           this.modalDialogService.Alert("Registro modificado correctamente.");
         });
     }
   }
-  
 }
